@@ -1,4 +1,37 @@
+/* Basic reset */
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5efe6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    pad: 1rem;
+    font-family: sans-serif;
+
+}
+.container{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgb(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+
+}
+/* Screens */
+.screen{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+}
+
+.screen.active{
+    display: block;
 }
