@@ -107,8 +107,15 @@ function startQuiz(){
 
      currentQuestion.answers.forEach(element => {
         const button = document.createElement("button")
-        button.textContent = answersContainer.text;
-     });
+        button.textContent = answers.text;
+        button.classList.add("answer-btn");
 
-     
-}   
+        button.dataset.correct = answers.correct;
+
+        button.addEventListener("click",selectAnswer)
+
+        answersContainer.appendChild(button);
+     });
+}
+
+function selectAnswer
