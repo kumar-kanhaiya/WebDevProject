@@ -89,28 +89,26 @@ function startQuiz(){
 
     showQuestion()
 }
- function restartQuiz(){
-    console.log("restart the quiz ");
- }
+ 
  function showQuestion(){
     // reset state
     answersDisabled = false;
-    const currentQuestion = quizQuestions(currentQuestionIndex);
+    const currentQuestion = quizQuestions[currentQuestionIndex];
     currentQuestionSpan.textContent = currentQuestionIndex + 1;
 
      const progressPercent = (currentQuestionIndex/quizQuestions.length) *100
 
      progressBar.style.width = progressPercent + "%"
-     questionText.textContent = currentQuestion(currentQuestionIndex);
+     questionText.textContent = currentQuestion.question;
 
      answersContainer.innerHTML = "";
 
-     currentQuestion.answers.forEach(element => {
+     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button")
-        button.textContent = answers.text;
-        button.classList.add("answer-btn");
+        button.textContent = answer.text;
+        button.classList.add("answers-btn");
 
-        button.dataset.correct = answers.correct;
+        button.dataset.correct = answer.correct;
 
         button.addEventListener("click",selectAnswer)
 
@@ -118,4 +116,62 @@ function startQuiz(){
      });
 }
 
-function selectAnswer
+function selectAnswer(event){
+  //optimization check 
+  if(answersDisabled) return
+  answersDisabled = true;
+
+  const selectButton = event.target;
+  const isCorrect = selectButton.dataset.correct ==="true";
+  Array.from(answersContainer.children).forEach(button =>{
+    if(button.dataset.correct === "true"){
+      button.classList.add("correct");
+    }
+    else{
+      button.classList.add("incorrect");
+    }
+  })
+  if(isCorrect){
+    score++;
+    scoreSpan.textContent = score;
+  }
+
+  setTimeout(()=>{
+    currentQuestionIndex++;
+    if(currentQuestionIndex < quizQuestions.length){
+      showQuestion()
+    }
+    else{
+      showResult()
+    }
+  },1000)
+
+
+}
+
+function showResult(){
+  quizScreen.classList.remove("active")
+  resultScreen.classList.add("active")
+
+  finalScoreSpan.textContent = score;
+  const percentage = (score/quizQuestions.length) *100
+  if(percentage === 100){
+    resultMessage.textContent = "Perfect you're a genius "
+  }
+  else if(percentage >= 80){
+    resultMessage.textContent = "greet job "
+  }
+  else if(percentage >=60){
+    resultMessage.textContent = "Good effort ! keep learning"
+  }
+  else if(percentage>=40){
+    resultMessage.textContent = "Not bad ! try again to improve "
+  }
+  else{
+    resultMessage.textContent = "keep studing you'll get better"
+  }
+}
+function restartQuiz(){
+    resultScreen.classList.remove("active")
+    startQuiz();
+ }
