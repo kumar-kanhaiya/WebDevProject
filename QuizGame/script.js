@@ -127,7 +127,7 @@ function selectAnswer(event){
     if(button.dataset.correct === "true"){
       button.classList.add("correct");
     }
-    else{
+    else if(button === selectButton){
       button.classList.add("incorrect");
     }
   })
