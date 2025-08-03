@@ -109,4 +109,6 @@ function startQuiz(){
         const button = document.createElement("button")
         button.textContent = answersContainer.text;
      });
+
+     
 }   
