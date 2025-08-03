@@ -123,6 +123,10 @@ function selectAnswer(event){
 
   const selectButton = event.target;
   const isCorrect = selectButton.dataset.correct ==="true";
+  // here array.from() is used to convert the nodelist returnde by answerscontainer.childer
+  // into an array , this is because the nodelist is not an array 
+  // and we need to use the forEach method 
+  
   Array.from(answersContainer.children).forEach(button =>{
     if(button.dataset.correct === "true"){
       button.classList.add("correct");
