@@ -3,13 +3,16 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
-#center{
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#rect{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    height: 300px;
-    width: 600px;
+    height: 200px;
+    width: 300px;
     border: 1px solid black;
 }
