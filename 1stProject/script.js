@@ -10,10 +10,15 @@ rect.addEventListener("mousemove",function(details){
         // let percentage = (rectangleLocation.width -insideRect)/100;
         // change.style.opacity = percentage;
         // change.style.backgroundColor = "red"
+        // this is also a correct approach 
+        // let redcolor = gsap.utils.mapRange(0,250,255,0,insideRect);
+        gsap.to(rect, color: )
+        change.style.backgroundColor = `rgb(${redcolor} , 0 , 0)`;
         
     }
     else{
 
     }
+    console.log(gsap.utils.mapRange(0,250,255,0,insideRect));
     
 })
