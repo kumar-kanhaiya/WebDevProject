@@ -25,3 +25,13 @@ videocon.addEventListener("mousemove",function(details){
             ease: Power3
         })
 })
+
+// loading annimation 
+gsap.from("#page1 h1",{
+    y:100,
+    delay: 0.3,
+    opacity:0,
+    duration: 0.5 ,
+    stagger : 0.5
+    
+})
