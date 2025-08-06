@@ -4,8 +4,58 @@
     box-sizing: border-box;
     font-family: 'Gilroy';
 }
+*::selection{
+    background-color: black;
+    color: #fff;
+}
 
 html , body{
     height: 100%;
     width: 100%;
+}
+
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0 1vw;
+    padding-top: 25vh;
+
+
+}
+#page1 h1{
+    font-size: 15.4vw;
+    text-transform: uppercase;
+    font-family: futura;
+    line-height: 13vw;
+    font-weight:bolder;
+    letter-spacing: -12px;
+    
+}
+#video-container{
+    height: 100vh;
+    width: 100%;
+    background-color: grey;
+    margin-top: 1vw;
+    position: relative;
+
+
+}
+#video-container video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#video-container #play{
+    padding: 3vw 2.3vw;
+    background-color: black;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: futura;
+    font-size: 1.2vw;
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0;
+    /* scale: 0; */
+    
 }
