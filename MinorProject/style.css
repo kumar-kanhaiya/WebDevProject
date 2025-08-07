@@ -73,6 +73,10 @@ html , body{
     height: 100%;
     width: 31%;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* background-color: red; */
  }
  #page2 .elem img{
@@ -88,11 +92,17 @@ html , body{
     background-color: rgb(189, 243, 243);
  }
 
-.elem .box{
-    height: 50px;
-    width: 80%;
+#page2 .elem .dets{
+    height: 60px;
+    width: 70%;
+    border-radius: 50px;
     position: absolute;
-    bg
+    z-index: 9;
+    background-color: palegoldenrod;
+}
+#page2 .elem .dets:hover{
+    height: 200px;
+  
 }
 
  @media (max-width:600px){
