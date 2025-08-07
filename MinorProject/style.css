@@ -60,7 +60,7 @@ html , body{
     
 }
 #page2{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -87,6 +87,13 @@ html , body{
     width: 100%;
     background-color: rgb(189, 243, 243);
  }
+
+.elem .box{
+    height: 50px;
+    width: 80%;
+    position: absolute;
+    bg
+}
 
  @media (max-width:600px){
    #page1 h1{
@@ -116,5 +123,28 @@ html , body{
     transform: translate(-50% , -50%);
     
 }
+#page2{
+    min-height: 70vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 5vw 3vw;
+    
+
+}
+#page2 .elem{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* background-color: red; */
+    margin-bottom: 3vw;
+ }
+ #page2 .elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    scale: 1;
+ }
 
  }
