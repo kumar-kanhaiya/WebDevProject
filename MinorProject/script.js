@@ -58,21 +58,37 @@ document.addEventListener("mousemove", function(details){
     })
 })
 
-var cursorr = document.querySelector("#child1");
+// var cursorr = document.querySelector("#child1");
 
-cursorr.addEventListener("mouseenter", function(){
-        gsap.to("#cursor",{
+// cursorr.addEventListener("mouseenter", function(){
+//         gsap.to("#cursor",{
             
-            transform: 'translate(-50%,-50%) scale(1)'
-        })
-})
+//             transform: 'translate(-50%,-50%) scale(1)'
+//         })
+// })
 
-document.querySelector("#child1").addEventListener("mouseleave",function(){
-    gsap.to("#cursor",{
-        transform: 'translate(-50%,-50%) scale(0)'
-    })
-})
+// document.querySelector("#child1").addEventListener("mouseleave",function(){
+//     gsap.to("#cursor",{
+//         transform: 'translate(-50%,-50%) scale(0)'
+//     })
+// })
 
 // applyfing for all child 
 
+document.querySelectorAll(".child").forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        gsap.to("#cursor",{
+            transform: 'translate(-50%,-50%) scale(1)'
+        })
+    })
+    
+})
+document.querySelectorAll(".child").forEach(function(elem){
+    elem.addEventListener("mouseleave",function(){
+        gsap.to("#cursor",{
+            transform: 'translate(-50%,-50%) scale(0)'
+        })
+    })
+    
+})
 
