@@ -51,3 +51,28 @@ gsap.from("#page1 #video-container",{
 })
 
 
+document.addEventListener("mousemove", function(details){
+    gsap.to("#cursor",{
+        left: details.x - 20 ,
+        top: details.y -20 
+    })
+})
+
+var cursorr = document.querySelector("#child1");
+
+cursorr.addEventListener("mouseenter", function(){
+        gsap.to("#cursor",{
+            
+            transform: 'translate(-50%,-50%) scale(1)'
+        })
+})
+
+document.querySelector("#child1").addEventListener("mouseleave",function(){
+    gsap.to("#cursor",{
+        transform: 'translate(-50%,-50%) scale(0)'
+    })
+})
+
+// applyfing for all child 
+
+

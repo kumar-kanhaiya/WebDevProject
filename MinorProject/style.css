@@ -13,7 +13,18 @@ html , body{
     height: 100%;
     width: 100%;
 }
-
+ body{
+    background-color: #F7F7F7;
+ }
+ #cursor{
+    height: 250px;
+    width: 250px;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    position: fixed;
+    
+   transform: translate(-50%,-50%) scale(0);
+ }
 #page1{
     min-height: 100vh;
     width: 100%;
@@ -87,10 +98,24 @@ html , body{
  }
 
  #page3{
-    height: 100vh;
+    min-height: 120vh;
     width: 100%;
-    background-color: rgb(189, 243, 243);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
  }
+ .child{
+    height: 55vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+ }
+ 
 
 #page2 .elem .dets{
     height: 60px;
