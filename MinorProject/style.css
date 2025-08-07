@@ -220,3 +220,10 @@ html , body{
     border-radius: 50px;
     background-color: #F7F7F7;
  }
+ #nav-part1{
+    height: 82px;
+    overflow: hidden;
+ }
+ #nav-part1 svg{
+    display: block;
+ }
