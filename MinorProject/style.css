@@ -81,3 +81,22 @@ html , body{
     object-fit: cover;
     scale: 1.2;
  }
+
+ #page3{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(189, 243, 243);
+ }
+
+ @media (max-width:600px){
+   #page1 h1{
+    font-size: 16vw;
+    letter-spacing: -3px;
+
+   }
+   #page1{
+    width: 100%;
+    padding: 0 3vw;
+    padding-top: 25vh;
+   }
+ }
