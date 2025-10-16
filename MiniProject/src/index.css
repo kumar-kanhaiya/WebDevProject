@@ -9,7 +9,12 @@ html, body, #root {
 }
 
 .parent{
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: #111;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+  box-sizing: border-box;
 }
