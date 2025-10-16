@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+html, body, #root {
+  height: 100%;
+}
+
+.parent{
+  height: 100vh;
+  width: 100vw;
+  background-color: #111;
+}
