@@ -8,13 +8,20 @@ html, body, #root {
   height: 100%;
 }
 
+/* prevent accidental horizontal scrolling when using full-width layouts */
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .parent{
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: #111;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   padding: 30px;
   box-sizing: border-box;
+  align-items: flex-start; /* keep cards from stretching vertically */
 }

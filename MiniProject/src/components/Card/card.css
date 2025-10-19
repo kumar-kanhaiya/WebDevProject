@@ -1,16 +1,16 @@
 .card-wrapper{
-    /* wrapper for a single card — do NOT occupy whole viewport */
-    display: block;
-    width: auto;
-    height: auto;
-    padding: 0;
+    /* wrapper for a single card — keep compact so parent flex controls layout */
+    display: inline-block;
+    vertical-align: top;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
  
 .card{
     height: 300px;
     width: 280px;
+    max-width: calc(100% - 20px);
     background-color: #fff;
     border-radius: 30px;
     padding: 15px;
