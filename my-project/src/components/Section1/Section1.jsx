@@ -9,6 +9,7 @@ const Section1 = () => {
       <Navbar />
       <Center />
       
+      
     </div>
   )
 }
