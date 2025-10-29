@@ -1,51 +1,65 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import Card from './components/Card';
 
-// Use native fetch (no axios dependency required)
 const App = () => {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(false)
+
+  const [userData, setUserData] = useState([]);
+
+  const [index, setIndex] = useState(1)
 
   const getData = async () => {
-    try {
-      setLoading(true)
-      const res = await fetch('https://picsum.photos/v2/list?page=2&limit=24')
-      const json = await res.json()
-      setData(json)
-    } catch (err) {
-      console.error('fetch error', err)
-    } finally {
-      setLoading(false)
-    }
+    const response = await axios.get(`https://picsum.photos/v2/list?page=${index}&limit=10`)
+    setUserData(response.data)
   }
 
-  // optional: load on mount
-  useEffect(() => {
+  useEffect(function () {
     getData()
-  }, [])
+  }, [index])
+
+
+  let printUserData = <h3 className='text-gray-300 text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold'>Loading...</h3>
+
+  if (userData.length > 0) {
+    printUserData = userData.map(function (elem, idx) {
+
+      return <div key={idx}>
+        <Card elem={elem} />
+      </div>
+    })
+  }
 
   return (
-    <div className='bg-black min-h-screen text-white'>
-      <div style={{ padding: 16 }}>
-        <button onClick={getData}
-          style={{ background: '#16a34a', padding: '8px 12px', borderRadius: 8, color: '#fff' }}>
-          {loading ? 'Loading…' : 'Refresh'}
-        </button>
+    <div className='bg-black overflow-auto h-screen p-4 text-white'>
+      <div className='flex h-[82%] flex-wrap gap-4 p-2'>
+        {printUserData}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 16, padding: 16 }}>
-        {data && data.length > 0 ? (
-          data.map((item) => (
-            <div key={item.id} style={{ background: '#fff', borderRadius: 12, overflow: 'hidden' }}>
-              <img src={item.download_url} alt={item.author} style={{ width: '100%', height: 160, objectFit: 'cover', display: 'block' }} />
-              <div style={{ padding: 8 }}>
-                <div style={{ fontSize: 14, color: '#111' }}>{item.author}</div>
-                <div style={{ fontSize: 12, color: '#666' }}>{item.width}x{item.height}</div>
-              </div>
-            </div>
-          ))
-        ) : (
-          <div style={{ color: '#fff', padding: 16 }}>No images yet — click Refresh</div>
-        )}
+      <div className='flex justify-center gap-6 items-center p-4'>
+        <button
+          style={{ opacity: index == 1 ? 0.6 : 1 }}
+          className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-semibold'
+          onClick={() => {
+            if (index > 1) {
+              setIndex(index - 1)
+              setUserData([])
+            }
+          }}
+        >
+          Prev
+        </button>
+        <h4>Page {index}</h4>
+        <button
+          className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-semibold'
+          onClick={() => {
+            setUserData([])
+
+            setIndex(index + 1)
+
+          }}
+        >
+          Next
+        </button>
       </div>
     </div>
   )
