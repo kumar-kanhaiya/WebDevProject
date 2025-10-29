@@ -1,0 +1,24 @@
+{
+  "name": "30javascriptproject",
+  "version": "1.0.0",
+  "description": "30BasicProject",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumar-kanhaiya/30BasicProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kumar-kanhaiya/30BasicProject/issues"
+  },
+  "homepage": "https://github.com/kumar-kanhaiya/30BasicProject#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "axios": "^1.13.1",
+    "tailwindcss": "^4.1.16"
+  }
+}
