@@ -21,6 +21,7 @@ body {
     text-align: left;
     padding: 16px;
     border-radius: 12px;
+    box-shadow: 5px 6px #333 ;
 }
 
 .image img{
