@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    
+}
+.card{
+    background: white;
+    border: 1px solid grey;
+    padding: 16px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    
+}
+
+.qr img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+.content h2 {
+    font-size: 18px;       
+    margin: 16px 0 10px;
+}
+
+.content p {
+    font-size: 14px;
+    color: grey;
+    margin: 0;
+}
