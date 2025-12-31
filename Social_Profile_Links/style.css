@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+
+
+.content{
+    height: 700px;
+    border-radius: 25px;
+    width: 500px;
+    background-color: rgb(0, 0, 0);
+}
+
+.content img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+/* remove default paragraph spacing */
+.details p {
+    margin: 0;
+    text-align: center;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.location {
+    font-size: 18px;
+    color: lightgreen;
+}
+
+.role {
+    font-size: 18px;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+
+button{
+    height: 50px;
+    background-color: rgba(83, 82, 82, 0.726);
+    border-radius: 12%;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+
+}
+
+button:hover {
+    color: black;
+    background-color: lightgreen;
+}
+
+button:hover a{
+    color: black;
+}
+
