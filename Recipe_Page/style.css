@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.main {
+    min-height: 100vh;
+    background-color: rgba(255, 228, 196, 0.87);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+
+
+.container {
+    width: 500px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+
+.tittle h4{
+    /* margin: 15px; */
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 32px;
+    /* padding: 10px; */
+}
+
+.tittle p{
+    font-size: 12px;
+}
+
+.preperation{
+    padding: 20px;
+    margin: 15px;
+    background-color: rgb(255, 224, 229);
+    border-radius: 15px;
+
+}
+.preperation h4{
+    color: purple;
+    margin-bottom: 5px;
+}
+p{
+    font-size: 12px;
+}
+
+.preperation p{
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.ingredients{
+    margin: 15px;
+    
+}
+
+.ingredients h4{
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: chocolate;
+}
+
+.ingredients p{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.instructions h4{
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: chocolate;
+}
+
+.instructions p{
+    margin-bottom: 5px;
+}
+
+.nutritions h4 {
+    font-size: 24px;
+    color: chocolate;
+}
+
+.nutritions .content {
+    margin-top: 16px;
+}
+
+.nutritions .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+
+.nutritions .row span:last-child {
+    font-weight: 600;
+    color: chocolate;
+}
